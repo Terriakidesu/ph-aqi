@@ -1,0 +1,11 @@
+Pollutant Correlations with main.aqi
+====================================
+main.aqi            1.000000
+components.o3       0.843025
+components.pm10     0.545288
+components.so2      0.514663
+components.pm2_5    0.468274
+components.co       0.135124
+components.no       0.082149
+components.no2     -0.029365
+components.nh3     -0.128411

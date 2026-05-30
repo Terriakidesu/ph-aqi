@@ -1,0 +1,19 @@
+.venv
+__pycache__
+
+# Binary model files
+models/*.joblib
+
+# IDE / Jupyter
+.ipynb_checkpoints/
+.vscode/
+.idea/
+
+# Temporary/System files
+*.log
+.DS_Store
+
+# Security artifacts
+.gemini_security/
+
+*.docx

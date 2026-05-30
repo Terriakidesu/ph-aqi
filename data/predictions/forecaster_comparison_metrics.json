@@ -1,0 +1,72 @@
+[
+  {
+    "model": "linear_regression_forecaster",
+    "horizon_hours": 1,
+    "mae": 0.1855661991714803,
+    "rmse": 0.2734634251008859,
+    "mape_percent": 11.580072818656397,
+    "r2": 0.8379360167640957,
+    "within_plus_minus_1_aqi": 0.9985130111524163,
+    "baseline_mae": 0.19851301115241635,
+    "baseline_rmse": 0.4455479897299688,
+    "baseline_mape_percent": 11.685254027261461,
+    "model_path": "models\\aqi_linear_regression_forecaster.joblib",
+    "prediction_path": "datasets\\predictions\\hourly_aqi_predictions_linear_regression.csv"
+  },
+  {
+    "model": "random_forest_forecaster",
+    "horizon_hours": 1,
+    "mae": 0.09236679058240398,
+    "rmse": 0.2299468178372061,
+    "mape_percent": 5.759045848822801,
+    "r2": 0.8854110292270053,
+    "within_plus_minus_1_aqi": 0.9996282527881041,
+    "baseline_mae": 0.19851301115241635,
+    "baseline_rmse": 0.4455479897299688,
+    "baseline_mape_percent": 11.685254027261461,
+    "model_path": "models\\aqi_random_forest_forecaster.joblib",
+    "prediction_path": "datasets\\predictions\\hourly_aqi_predictions_random_forest_regression.csv"
+  },
+  {
+    "model": "svr_forecaster",
+    "horizon_hours": 1,
+    "mae": 0.29238925015163536,
+    "rmse": 0.3459034546245024,
+    "mape_percent": 18.551094771523367,
+    "r2": 0.7407028103467046,
+    "within_plus_minus_1_aqi": 1.0,
+    "baseline_mae": 0.19851301115241635,
+    "baseline_rmse": 0.4455479897299688,
+    "baseline_mape_percent": 11.685254027261461,
+    "model_path": "models\\aqi_svr_forecaster.joblib",
+    "prediction_path": "datasets\\predictions\\hourly_aqi_predictions_svr.csv"
+  },
+  {
+    "model": "xgboost_forecaster",
+    "horizon_hours": 1,
+    "mae": 0.11502569663480312,
+    "rmse": 0.23305117742805406,
+    "mape_percent": 7.136151036513044,
+    "r2": 0.8822961648420325,
+    "within_plus_minus_1_aqi": 0.9973977695167286,
+    "baseline_mae": 0.19851301115241635,
+    "baseline_rmse": 0.4455479897299688,
+    "baseline_mape_percent": 11.685254027261461,
+    "model_path": "models\\aqi_xgboost_forecaster.joblib",
+    "prediction_path": "datasets\\predictions\\hourly_aqi_predictions_xgboost_regression.csv"
+  },
+  {
+    "model": "catboost_forecaster",
+    "horizon_hours": 1,
+    "mae": 0.11932918978603971,
+    "rmse": 0.23571805171168114,
+    "mape_percent": 7.3009747684913595,
+    "r2": 0.8795869112958352,
+    "within_plus_minus_1_aqi": 0.9985130111524163,
+    "baseline_mae": 0.19851301115241635,
+    "baseline_rmse": 0.4455479897299688,
+    "baseline_mape_percent": 11.685254027261461,
+    "model_path": "models\\aqi_catboost_forecaster.joblib",
+    "prediction_path": "datasets\\predictions\\hourly_aqi_predictions_catboost_regression.csv"
+  }
+]

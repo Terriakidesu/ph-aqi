@@ -1,0 +1,236 @@
+[
+  {
+    "model": "random_forest_classifier",
+    "horizon_hours": 1,
+    "accuracy": 0.9361778415202582,
+    "weighted_f1": 0.9333835465770122,
+    "mae": 0.06382215847974185,
+    "rmse": 0.25263047812910827,
+    "mape_percent": 4.2338950639416755,
+    "within_plus_minus_1_aqi": 1.0,
+    "confusion_matrix": [
+      [
+        1018,
+        74,
+        0,
+        0
+      ],
+      [
+        50,
+        1367,
+        15,
+        0
+      ],
+      [
+        0,
+        22,
+        226,
+        0
+      ],
+      [
+        0,
+        0,
+        17,
+        0
+      ]
+    ],
+    "classification_report": "              precision    recall  f1-score   support\n\n           0       0.95      0.93      0.94      1092\n           1       0.93      0.95      0.94      1432\n           2       0.88      0.91      0.89       248\n           3       0.00      0.00      0.00        17\n\n    accuracy                           0.94      2789\n   macro avg       0.69      0.70      0.70      2789\nweighted avg       0.93      0.94      0.93      2789\n",
+    "model_path": "models\\aqi_random_forest_classifier_pipeline.joblib",
+    "prediction_path": "datasets\\predictions\\hourly_aqi_predictions_random_forest.csv"
+  },
+  {
+    "model": "multinomial_logistic_regression",
+    "horizon_hours": 1,
+    "accuracy": 0.8336321262101112,
+    "weighted_f1": 0.8401531091921255,
+    "mae": 0.1692362854069559,
+    "rmse": 0.4182978707106815,
+    "mape_percent": 10.063344089876898,
+    "within_plus_minus_1_aqi": 0.9971315883829329,
+    "confusion_matrix": [
+      [
+        992,
+        100,
+        0,
+        0
+      ],
+      [
+        146,
+        1100,
+        178,
+        8
+      ],
+      [
+        0,
+        0,
+        216,
+        32
+      ],
+      [
+        0,
+        0,
+        0,
+        17
+      ]
+    ],
+    "classification_report": "              precision    recall  f1-score   support\n\n           0       0.87      0.91      0.89      1092\n           1       0.92      0.77      0.84      1432\n           2       0.55      0.87      0.67       248\n           3       0.30      1.00      0.46        17\n\n    accuracy                           0.83      2789\n   macro avg       0.66      0.89      0.71      2789\nweighted avg       0.86      0.83      0.84      2789\n",
+    "model_path": "models\\aqi_logistic_regression_classifier_pipeline.joblib",
+    "prediction_path": "datasets\\predictions\\hourly_aqi_predictions_logistic_regression.csv"
+  },
+  {
+    "model": "multiclass_svm",
+    "horizon_hours": 1,
+    "accuracy": 0.8673359627106489,
+    "weighted_f1": 0.8686579493485818,
+    "mae": 0.13409824309788454,
+    "rmse": 0.3700900629778535,
+    "mape_percent": 7.2726186207720795,
+    "within_plus_minus_1_aqi": 0.9985657941914665,
+    "confusion_matrix": [
+      [
+        1048,
+        44,
+        0,
+        0
+      ],
+      [
+        195,
+        1143,
+        90,
+        4
+      ],
+      [
+        0,
+        17,
+        211,
+        20
+      ],
+      [
+        0,
+        0,
+        0,
+        17
+      ]
+    ],
+    "classification_report": "              precision    recall  f1-score   support\n\n           0       0.84      0.96      0.90      1092\n           1       0.95      0.80      0.87      1432\n           2       0.70      0.85      0.77       248\n           3       0.41      1.00      0.59        17\n\n    accuracy                           0.87      2789\n   macro avg       0.73      0.90      0.78      2789\nweighted avg       0.88      0.87      0.87      2789\n",
+    "model_path": "models\\aqi_svm_classifier_pipeline.joblib",
+    "prediction_path": "datasets\\predictions\\hourly_aqi_predictions_svm.csv"
+  },
+  {
+    "model": "xgboost_classifier",
+    "horizon_hours": 1,
+    "accuracy": 0.9422732162065256,
+    "weighted_f1": 0.9417338769406387,
+    "mae": 0.057726783793474366,
+    "rmse": 0.24026398771658303,
+    "mape_percent": 3.6871040994382693,
+    "within_plus_minus_1_aqi": 1.0,
+    "confusion_matrix": [
+      [
+        1039,
+        53,
+        0,
+        0
+      ],
+      [
+        66,
+        1344,
+        22,
+        0
+      ],
+      [
+        0,
+        10,
+        238,
+        0
+      ],
+      [
+        0,
+        0,
+        10,
+        7
+      ]
+    ],
+    "classification_report": "              precision    recall  f1-score   support\n\n           0       0.94      0.95      0.95      1092\n           1       0.96      0.94      0.95      1432\n           2       0.88      0.96      0.92       248\n           3       1.00      0.41      0.58        17\n\n    accuracy                           0.94      2789\n   macro avg       0.94      0.82      0.85      2789\nweighted avg       0.94      0.94      0.94      2789\n",
+    "model_path": "models\\aqi_xgboost_classifier_pipeline.joblib",
+    "prediction_path": "datasets\\predictions\\hourly_aqi_predictions_xgboost.csv"
+  },
+  {
+    "model": "catboost_classifier",
+    "horizon_hours": 1,
+    "accuracy": 0.942631767658659,
+    "weighted_f1": 0.9398410720477383,
+    "mae": 0.05736823234134098,
+    "rmse": 0.23951666401597402,
+    "mape_percent": 44.220771532274576,
+    "within_plus_minus_1_aqi": 0.9233901920429346,
+    "confusion_matrix": [
+      [
+        1028,
+        64,
+        0,
+        0
+      ],
+      [
+        48,
+        1370,
+        14,
+        0
+      ],
+      [
+        0,
+        17,
+        231,
+        0
+      ],
+      [
+        0,
+        0,
+        17,
+        0
+      ]
+    ],
+    "classification_report": "              precision    recall  f1-score   support\n\n           0       0.96      0.94      0.95      1092\n           1       0.94      0.96      0.95      1432\n           2       0.88      0.93      0.91       248\n           3       0.00      0.00      0.00        17\n\n    accuracy                           0.94      2789\n   macro avg       0.70      0.71      0.70      2789\nweighted avg       0.94      0.94      0.94      2789\n",
+    "model_path": "models\\aqi_catboost_classifier_pipeline.joblib",
+    "prediction_path": "datasets\\predictions\\hourly_aqi_predictions_catboost.csv"
+  },
+  {
+    "model": "balanced_random_forest_classifier",
+    "horizon_hours": 1,
+    "accuracy": 0.8479741842954464,
+    "weighted_f1": 0.849039545971766,
+    "mae": 0.152384367156687,
+    "rmse": 0.3912818294541081,
+    "mape_percent": 9.662961634994621,
+    "within_plus_minus_1_aqi": 0.9996414485478666,
+    "confusion_matrix": [
+      [
+        970,
+        122,
+        0,
+        0
+      ],
+      [
+        175,
+        1154,
+        102,
+        1
+      ],
+      [
+        0,
+        12,
+        224,
+        12
+      ],
+      [
+        0,
+        0,
+        0,
+        17
+      ]
+    ],
+    "classification_report": "              precision    recall  f1-score   support\n\n           0       0.85      0.89      0.87      1092\n           1       0.90      0.81      0.85      1432\n           2       0.69      0.90      0.78       248\n           3       0.57      1.00      0.72        17\n\n    accuracy                           0.85      2789\n   macro avg       0.75      0.90      0.80      2789\nweighted avg       0.86      0.85      0.85      2789\n",
+    "model_path": "models\\aqi_balanced_random_forest_classifier_pipeline.joblib",
+    "prediction_path": "datasets\\predictions\\hourly_aqi_predictions_balanced_random_forest.csv"
+  }
+]

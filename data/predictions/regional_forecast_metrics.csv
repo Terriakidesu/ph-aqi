@@ -1,0 +1,16 @@
+island_group,model,mae,rmse,mape,cities_evaluated
+Luzon,LSTM,0.3198,0.4,21.66,4
+Luzon,SARIMA,0.5848,0.7144,27.3604,4
+Luzon,ARIMA,0.8131,0.9754,38.5791,4
+Luzon,Naive,0.9921,1.1963,42.4516,4
+Luzon,Holt-Winters,1.0842,1.279,47.6393,4
+Mindanao,LSTM,0.2266,0.3459,18.0446,2
+Mindanao,ARIMA,0.2382,0.4112,14.7379,2
+Mindanao,SARIMA,0.2501,0.4198,15.924,2
+Mindanao,Naive,0.1957,0.4374,9.7833,2
+Mindanao,Holt-Winters,0.1957,0.4374,9.7833,2
+Visayas,LSTM,0.293,0.3828,23.5404,4
+Visayas,ARIMA,0.5084,0.5871,30.1282,4
+Visayas,SARIMA,0.5104,0.5899,30.8853,4
+Visayas,Naive,0.5423,0.7329,27.1127,4
+Visayas,Holt-Winters,0.5423,0.7329,27.114,4

@@ -1,0 +1,11 @@
+city_name,island_group,selected_rows,imputed_rows,inserted_hourly_rows,feature_engineered_rows,imputation_scope,feature_scope,regional_use
+Manila,Luzon,1394,1416,22,1391,per city,per city,"aggregation only, not training"
+Quezon City,Luzon,1412,1416,4,1391,per city,per city,"aggregation only, not training"
+Makati City,Luzon,1398,1416,18,1391,per city,per city,"aggregation only, not training"
+Pasig,Luzon,1391,1416,25,1391,per city,per city,"aggregation only, not training"
+Cebu City,Visayas,1414,1416,2,1391,per city,per city,"aggregation only, not training"
+Lapu-Lapu City,Visayas,1414,1416,2,1391,per city,per city,"aggregation only, not training"
+Iloilo City,Visayas,1414,1416,2,1391,per city,per city,"aggregation only, not training"
+Bacolod,Visayas,1415,1416,1,1391,per city,per city,"aggregation only, not training"
+Davao,Mindanao,1402,1416,14,1391,per city,per city,"aggregation only, not training"
+Cagayan de Oro,Mindanao,1209,1415,206,1390,per city,per city,"aggregation only, not training"

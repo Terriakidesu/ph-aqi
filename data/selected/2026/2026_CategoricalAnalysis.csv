@@ -1,0 +1,2 @@
+Feature,No. of Categories,Top Categories,Observations
+main.aqi,5,2 - Fair (8447); 1 - Good (3081); 3 - Moderate (2292); 4 - Poor (48); 5 - Very Poor (0),Moderately imbalanced; top category is 60.91% of rows.
