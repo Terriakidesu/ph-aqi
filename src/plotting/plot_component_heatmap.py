@@ -31,6 +31,8 @@ def load_data() -> pd.DataFrame:
 
 def save_heatmap(df: pd.DataFrame) -> Path:
     corr = df.corr(numeric_only=True)
+    corr.columns = ["AQI", "CO", "NO", "NO2", "O3", "SO2", "PM25", "PM10", "NH3"]
+    corr.index = corr.columns
 
     fig, ax = plt.subplots(figsize=(8, 7))
     plt.rcParams.update({'font.size': 11})

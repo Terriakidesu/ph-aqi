@@ -21,3 +21,7 @@ IV. Conclusion
 V. Recommendation
 VI. References
  - at least 20 REAL AND WITH PROOF REFERENCES
+
+MANDATORY:
+ - Mention the gap of the other works/papers, that can be used to defend this work
+ - 20 REAL, WITH URL, WITH CITATIONS related papers/works
