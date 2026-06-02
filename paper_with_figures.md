@@ -47,7 +47,7 @@ The methodology is organized into several distinct phases to ensure scientific r
 
 Evaluation of the models is conducted through a multi-metric statistical analysis, focusing on the accuracy of discrete **AQI** category tracking. The study specifically utilizes Mean Absolute Error (MAE), Root Mean Squared Error (RMSE), and Mean Absolute Percentage Error (MAPE) to provide a holistic view of model reliability. By testing the models across ten different urban centers, the research design also accounts for spatial variability and regional atmospheric differences. This comprehensive framework allows for the identification of the most suitable forecasting techniques for different types of urban environments, ultimately contributing to a deeper understanding of air quality dynamics in the region.
 
-### B. Dataset Information and City Selection Rationale
+### B. Dataset I
 
 The empirical foundation of this study is a high-resolution dataset containing 13,863 hourly observations, spanning from January 1 to February 28, 2026. This data was sourced from the "Philippine Cities Air Quality Index Data 2026" repository on Kaggle, which provides comprehensive sensor logs for major metropolitan areas in the Philippines [10]. Each observation in the dataset includes the target **AQI** value, the concentrations of eight critical pollutants, and a precise temporal index. The dataset was selected for its high sampling frequency and regional breadth, making it ideal for modeling the sub-daily variations and complex interactions that define urban air quality.
 
@@ -92,9 +92,9 @@ The primary predictors fed into the multivariate models, including raw pollutant
 | **Engineered Features**| Cyclical Time | **T-CYC** | $T_{sin}, T_{cos}$ |
 | **Engineered Features**| Temporal Lags | **T-LAG** | $L_1, L_2, L_{24}$ |
 
-The distribution of observations across the ten highly urbanized cities is provided in Table V. The variations in row counts per city (averaging ~1,386 observations) are a result of the rigorous cleaning phase, where inconsistent sensor records were removed [10].
+The distribution of observations across the ten highly urbanized cities is provided in Table IV. The variations in row counts per city (averaging ~1,386 observations) are a result of the rigorous cleaning phase, where inconsistent sensor records were removed [10].
 
-| TABLE V: Cleaned Data Distribution by City (Jan-Feb 2026) |
+| TABLE IV: Cleaned Data Distribution by City (Jan-Feb 2026) |
 | --- |
 
 | Island Group | Representative City | Observation Count (Hours) |
@@ -161,13 +161,13 @@ The **LSTM** neural network was selected as the representative deep learning mod
 
 At the core of this model is the **LSTM** cell, which maintains an internal cell state $C_t$ governed by four interacting mathematical gates. The **Forget Gate** ($f_t$) determines which information from the previous state is discarded, while the **Input Gate** ($i_t$) and **Output Gate** ($o_t$) control the addition and exposure of temporal information [3], [5]. This complex logic enables the network to remember significant atmospheric events over many hours. The network was optimized using the Adam algorithm [2] and trained for 50 epochs using MAE as the loss function.
 
-### G. Hyperparameter Optimization
+### F. Hyperparameter Optimization
 
 To identify the most effective configuration for the recurrent architectures, a systematic hyperparameter tuning process was conducted. This optimization phase focused on balancing model capacity with generalization capability, particularly for the **LSTM** and SARIMA models. The search space was defined based on established heuristics for atmospheric time-series forecasting, aiming to minimize the validation **MAE** while preventing overfitting to the localized urban noise of individual cities.
 
-For the **LSTM** model, a grid-search approach was implemented over three primary dimensions: hidden layer units, dropout rates, and learning rates. The search space included unit counts of $\{64, 128\}$ for the initial recurrent layer, dropout rates of $\{0.05, 0.1, 0.2\}$ to regulate internal state regularization [5], and Adam learning rates of $\{1e-3, 1e-4\}$. The evaluation was performed using a 10% validation split within the training window. The resulting optimal configuration, as detailed in Table IV, utilizes a stacked architecture (128/64 units) with a low dropout rate of $0.05$, suggesting that the multivariate environmental features provide enough structural information that aggressive regularization was not required.
+For the **LSTM** model, a grid-search approach was implemented over three primary dimensions: hidden layer units, dropout rates, and learning rates. The search space included unit counts of $\{64, 128\}$ for the initial recurrent layer, dropout rates of $\{0.05, 0.1, 0.2\}$ to regulate internal state regularization [5], and Adam learning rates of $\{1e-3, 1e-4\}$. The evaluation was performed using a 10% validation split within the training window. The resulting optimal configuration, as detailed in Table V, utilizes a stacked architecture (128/64 units) with a low dropout rate of $0.05$, suggesting that the multivariate environmental features provide enough structural information that aggressive regularization was not required.
 
-| TABLE IV: Optimized LSTM Hyperparameter Configuration |
+| TABLE V: Optimized LSTM Hyperparameter Configuration |
 | --- |
 
 | Parameter | Optimized Value | Description |
@@ -233,11 +233,8 @@ The multi-pollutant correlation structure is further visualized in the heatmap i
 
 The performance of the implemented forecasting architectures was evaluated across all ten cities during the testing phase. Table VII provides an aggregated view of the error scores recorded for each model. Contrary to the initial expectation that deep learning would dominate all scenarios, the results show a more nuanced landscape where model suitability is highly dependent on the specific characteristics of the city being modeled. In many cases, the SARIMA model and even the Average Forecast provided surprisingly competitive results, particularly in terms of **MAE**.
 
-This performance disparity is visualized in **Fig. 5**, which highlights the stability of the SARIMA and Average models across different city types. The effectiveness of the SARIMA model can be attributed to its ability to capture the highly regular diurnal patterns that characterize Philippine urban activity. Furthermore, **Fig. 6** provides a granular look at a 48-hour forecast tracking window for Cebu City. The figure demonstrates the models' ability to track discrete jumps in **AQI** categories with high precision. The **LSTM** model, while more complex, demonstrated its strength in modeling the long-term dependencies and non-linear interactions during more volatile periods [3], [4].
-
 | TABLE VII: Aggregated Predictive Error Metric Comparisons |
 | --- |
-
 
 | Model Architecture | MAE | RMSE | MAPE | Performance Suitability |
 | --- | --- | --- | --- | --- |
@@ -248,7 +245,7 @@ This performance disparity is visualized in **Fig. 5**, which highlights the sta
 | Seasonal ARIMA (SARIMA) | 0.66 | 0.84 | 34.15% | Diurnal cycles |
 | **LSTM (Optimized)** | **0.61** | **0.87** | **29.19%** | **Complex non-linear paths** |
 
-The performance disparity is visualized in **Fig. 5**, where the Average Forecast and SARIMA models consistently achieve the most competitive scores across different city types. **Fig. 6** provides a granular view of the 48-hour forecast tracking for Cebu City, demonstrating the model's ability to track discrete **AQI** category jumps with high precision.
+The performance disparity is visualized in **Fig. 5**, which highlights the stability of the SARIMA and Average models across different city types. The effectiveness of the SARIMA model can be attributed to its ability to capture the highly regular diurnal patterns that characterize Philippine urban activity. Furthermore, **Fig. 6** provides a granular look at a 48-hour forecast tracking window for Cebu City, demonstrating the models' ability to track discrete jumps in **AQI** categories with high precision. The **LSTM** model, while more complex, demonstrated its strength in modeling the long-term dependencies and non-linear interactions during more volatile periods [3], [4].
 
 ![Fig. 5. MAE and RMSE Comparison across models.](figs/model_comparison/model_error_comparison.png)
 *Fig. 5. Model Error Comparison.*
