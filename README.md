@@ -256,13 +256,18 @@ The performance of the implemented forecasting architectures was evaluated acros
 | Seasonal ARIMA (SARIMA) | 0.66 | 0.84 | 34.15% | Diurnal cycles |
 | **LSTM (Optimized)** | **0.61** | **0.87** | **29.19%** | **Complex non-linear paths** |
 
-The performance disparity is visualized in **Fig. 5**, which highlights the stability of the SARIMA and Average models across different city types. The effectiveness of the SARIMA model can be attributed to its ability to capture the highly regular diurnal patterns that characterize Philippine urban activity. Furthermore, **Fig. 6** provides a granular look at a 48-hour forecast tracking window for Quezon City. This specific two-day window was selected due to its high atmospheric volatility, providing an ideal stress test for the algorithms. Because the target variable represents discrete health-risk categories, the predictions are strictly rounded and clipped to a 1–5 integer scale. The resulting plot allows for a direct visual assessment of how closely each model's "steps" align with the actual recorded sudden spikes and drops in pollution. In this volatile scenario, the **LSTM** model demonstrated its strength in tracking non-linear, multi-category jumps over time, whereas simpler models tended to lag or under-predict severe pollution events [3], [4].
+The complete per-city error breakdown is provided in [per_city_metrics_table.md](per_city_metrics_table.md), which preserves the table as Markdown for direct review and editing.
+
+The performance disparity is visualized in **Fig. 5**, which highlights the stability of the SARIMA and Average models across different city types. The LSTM-specific rolling validation behavior is shown in **Fig. 6**, where the 24-hour RMSE window tracks how prediction error changes across cities over the hold-out period. Furthermore, **Fig. 7** provides a granular look at a 48-hour forecast tracking window for Quezon City. This specific two-day window was selected due to its high atmospheric volatility, providing an ideal stress test for the algorithms. Because the target variable represents discrete health-risk categories, the predictions are strictly rounded and clipped to a 1–5 integer scale. The resulting plot allows for a direct visual assessment of how closely each model's "steps" align with the actual recorded sudden spikes and drops in pollution. In this volatile scenario, the **LSTM** model demonstrated its strength in tracking non-linear, multi-category jumps over time, whereas simpler models tended to lag or under-predict severe pollution events [3], [4].
 
 ![Fig. 5. MAE and RMSE Comparison across models.](figs/model_comparison/model_error_comparison.png)
 *Fig. 5. Model Error Comparison.*
 
-![Fig. 6. 48-hour time series forecast window: Actual vs. Predicted AQI for multiple models in Quezon City.](figs/forecast_samples/best_city_forecast_48h.png)
-*Fig. 6. 48-hour forecast tracking on discrete 1-5 scale.*
+![Fig. 6. Per-city rolling window validation RMSE for the LSTM model.](figs/model_comparison/rolling_window_validation_compact.png)
+*Fig. 6. LSTM rolling window validation using a 24-hour RMSE window.*
+
+![Fig. 7. 48-hour time series forecast window: Actual vs. Predicted AQI for multiple models in Quezon City.](figs/forecast_samples/best_city_forecast_48h.png)
+*Fig. 7. 48-hour forecast tracking on discrete 1-5 scale.*
 
 ### C. Comparative Regional Analysis
 
